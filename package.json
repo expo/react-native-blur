@@ -1,14 +1,14 @@
 {
-  "name": "react-native-blur",
-  "version": "3.2.2",
-  "description": "React Native Blur component",
+  "name": "expo-blur",
+  "version": "1.0.0",
+  "description": "Universal module for React Native Blur component",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:react-native-community/react-native-blur.git"
+    "url": "git@github.com:expo/react-native-blur.git"
   },
   "keywords": [
     "react-native",
@@ -21,6 +21,9 @@
     "url": "https://github.com/react-native-community/react-native-blur/issues"
   },
   "homepage": "https://github.com/react-native-community/react-native-blur",
+  "peerDependencies": {
+    "expo-core": "~2.0.0"
+  },
   "dependencies": {
     "prop-types": "^15.5.10"
   }

@@ -1,21 +1,24 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { requireNativeComponent } from 'react-native';
+import { NativeModulesProxy, requireNativeViewManager } from 'expo-core';
+import { findNodeHandle } from 'react-native';
 
 class VibrancyView extends Component {
   setNativeProps = nativeProps => {
     if (this._root) {
-      this._root.setNativeProps(nativeProps);
+      NativeModulesProxy.VibrancyViewManager.updateProps(nativeProps, findNodeHandle(this._root));
     }
-  }
+  };
 
   render() {
     return (
       <NativeVibrancyView
         {...this.props}
-        style={[{
-          backgroundColor: 'transparent',
-        }, this.props.style,
+        style={[
+          {
+            backgroundColor: 'transparent',
+          },
+          this.props.style,
         ]}
       />
     );
@@ -31,6 +34,6 @@ VibrancyView.defaultProps = {
   blurAmount: 10,
 };
 
-const NativeVibrancyView = requireNativeComponent('VibrancyView', VibrancyView);
+const NativeVibrancyView = requireNativeViewManager('VibrancyView');
 
 module.exports = VibrancyView;

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { requireNativeViewManager, EventEmitter, NativeModulesProxy } from 'expo-core';
 import { View, requireNativeComponent, DeviceEventEmitter, ViewPropTypes } from 'react-native';
 
 const OVERLAY_COLORS = {
@@ -8,16 +9,19 @@ const OVERLAY_COLORS = {
   dark: 'rgba(16, 12, 12, 0.64)',
 };
 
-
 class BlurView extends Component {
   componentWillMount() {
-    DeviceEventEmitter.addListener('ReactNativeBlurError', (message) => {
+    this._eventEmitter = new EventEmitter({});
+    this._eventEmitter.addListener('ReactNativeBlurError', ({ message }) => {
       throw new Error(`[ReactNativeBlur]: ${message}`);
     });
   }
 
   componentWillUnmount() {
-    DeviceEventEmitter.removeAllListeners('ReactNativeBlurError');
+    if (this._eventEmitter) {
+      this._eventEmitter.removeAllListeners('ReactNativeBlurError');
+      this._eventEmitter = null;
+    }
   }
 
   overlayColor() {
@@ -90,6 +94,6 @@ BlurView.defaultProps = {
   blurAmount: 10,
 };
 
-const NativeBlurView = requireNativeComponent('BlurView', BlurView);
+const NativeBlurView = requireNativeViewManager('BlurView');
 
 module.exports = BlurView;

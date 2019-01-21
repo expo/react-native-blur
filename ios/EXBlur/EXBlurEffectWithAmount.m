@@ -3,7 +3,7 @@
 // See: http://stackoverflow.com/a/30744777/304706
 //
 
-#import "BlurEffectWithAmount.h"
+#import <EXBlur/EXBlurEffectWithAmount.h>
 #import <objc/runtime.h>
 
 @interface UIBlurEffect (Protected)
@@ -12,7 +12,7 @@
 
 @end
 
-@implementation BlurEffectWithAmount
+@implementation EXBlurEffectWithAmount
 @dynamic blurAmount;
 
 + (instancetype)effectWithStyle:(UIBlurEffectStyle)style
@@ -24,7 +24,7 @@
 
 + (instancetype)effectWithStyle:(UIBlurEffectStyle)style andBlurAmount:(NSNumber*)blurAmount
 {
-  BlurEffectWithAmount *effect = (BlurEffectWithAmount*)[self effectWithStyle:style];
+  EXBlurEffectWithAmount *effect = (EXBlurEffectWithAmount*)[self effectWithStyle:style];
   effect.blurAmount = blurAmount;
   return effect;
 }

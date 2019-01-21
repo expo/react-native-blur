@@ -1,15 +1,14 @@
-#import <React/RCTComponent.h>
-#import "BlurView.h"
-#import "VibrancyView.h"
+#import <EXBlur/EXBlurView.h>
+#import <EXBlur/EXVibrancyView.h>
 
-@interface VibrancyView ()
+@interface EXVibrancyView ()
 
 @property (nonatomic, strong) UIVibrancyEffect *vibrancyEffect;
 @property (nonatomic, strong) UIVisualEffectView *vibrancyEffectView;
 
 @end
 
-@implementation VibrancyView
+@implementation EXVibrancyView
 
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
@@ -29,8 +28,8 @@
     self.vibrancyEffectView.frame = self.bounds;
 }
 
-- (void)insertReactSubview:(id<RCTComponent>)subview atIndex:(NSInteger)atIndex {
-    [self.vibrancyEffectView.contentView addSubview:(UIView*)subview];
+- (void)insertSubview:(UIView *)view atIndex:(NSInteger)index {
+    [self.vibrancyEffectView.contentView addSubview:(UIView*)view];
 }
 
 - (void)updateBlurEffect

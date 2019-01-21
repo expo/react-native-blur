@@ -1,12 +1,12 @@
 #import <UIKit/UIKit.h>
-#import "BlurEffectWithAmount.h"
+#import <EXBlur/EXBlurEffectWithAmount.h>
 
-@interface BlurView : UIView
+@interface EXBlurView : UIView
 
 @property (nonatomic, copy) NSString *blurType;
 @property (nonatomic, copy) NSNumber *blurAmount;
 
-@property (nonatomic, strong) BlurEffectWithAmount *blurEffect;
+@property (nonatomic, strong) EXBlurEffectWithAmount *blurEffect;
 @property (nonatomic, strong) UIVisualEffectView *blurEffectView;
 
 - (void)updateBlurEffect;

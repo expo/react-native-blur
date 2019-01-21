@@ -1,11 +1,11 @@
-#import "BlurView.h"
-#import "BlurEffectWithAmount.h"
+#import <EXBlur/EXBlurView.h>
+#import <EXBlur/EXBlurEffectWithAmount.h>
 
-@interface BlurView ()
+@interface EXBlurView ()
 
 @end
 
-@implementation BlurView
+@implementation EXBlurView
 
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
@@ -66,7 +66,7 @@
 - (void)updateBlurEffect
 {
   UIBlurEffectStyle style = [self blurEffectStyle];
-  self.blurEffect = [BlurEffectWithAmount effectWithStyle:style andBlurAmount:self.blurAmount];
+  self.blurEffect = [EXBlurEffectWithAmount effectWithStyle:style andBlurAmount:self.blurAmount];
   self.blurEffectView.effect = self.blurEffect;
 }
 

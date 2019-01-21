@@ -1,37 +1,39 @@
 buildscript {
-    repositories {
-        jcenter()
-    }
+  repositories {
+    google()
+    jcenter()
+  }
 
-    dependencies {
-        classpath 'com.android.tools.build:gradle:2.2.3'
-    }
+  dependencies {
+    classpath 'com.android.tools.build:gradle:3.2.1'
+  }
 }
 
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion "25.0.3"
+  compileSdkVersion 26
 
-    defaultConfig {
-        minSdkVersion 16
-        targetSdkVersion 22
-        versionCode 1
-        versionName "1.0"
+  defaultConfig {
+    minSdkVersion 21
+    targetSdkVersion 26
+    versionCode 1
+    versionName "1.0"
 
-        renderscriptTargetApi 23
-        renderscriptSupportModeEnabled true
-    }
-    lintOptions {
-        abortOnError false
-    }
+    renderscriptTargetApi 23
+    renderscriptSupportModeEnabled true
+  }
+  lintOptions {
+    abortOnError false
+  }
 }
 
 repositories {
-    mavenCentral()
+  mavenCentral()
 }
 
+apply from: project(":expo-core").file("../expo-core.gradle")
+
 dependencies {
-    compile 'com.facebook.react:react-native:[0.32,)'
+  expendency 'expo-core'
 }

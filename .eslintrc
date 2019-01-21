@@ -151,7 +151,7 @@
     "no-new-object": 2,              // http://eslint.org/docs/rules/no-new-object
     "no-spaced-func": 2,             // http://eslint.org/docs/rules/no-spaced-func
     "no-trailing-spaces": 2,         // http://eslint.org/docs/rules/no-trailing-spaces
-    "no-wrap-func": 2,               // http://eslint.org/docs/rules/no-wrap-func
+    "no-extra-parens": 2,               // http://eslint.org/docs/rules/no-wrap-func
     "no-underscore-dangle": 0,       // http://eslint.org/docs/rules/no-underscore-dangle
     "one-var": [2, "never"],         // http://eslint.org/docs/rules/one-var
     "padded-blocks": 0,   // http://eslint.org/docs/rules/padded-blocks
@@ -160,11 +160,9 @@
       "before": false,
       "after": true
     }],
-    "space-after-keywords": 2,       // http://eslint.org/docs/rules/space-after-keywords
+    "keyword-spacing": 2,       // http://eslint.org/docs/rules/space-after-keywords
     "space-before-blocks": 2,        // http://eslint.org/docs/rules/space-before-blocks
     "space-before-function-paren": [2, "never"], // http://eslint.org/docs/rules/space-before-function-paren
-    "space-infix-ops": 2,            // http://eslint.org/docs/rules/space-infix-ops
-    "space-return-throw-case": 2,    // http://eslint.org/docs/rules/space-return-throw-case
-    "spaced-line-comment": 2         // http://eslint.org/docs/rules/spaced-line-comment
+    "space-infix-ops": 2            // http://eslint.org/docs/rules/space-infix-ops
   }
 }
