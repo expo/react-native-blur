@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { View, ViewPropTypes, findNodeHandle } from 'react-native';
 import { NativeModulesProxy, requireNativeViewManager } from 'expo-core';
 
-class BlurView extends Component {
+export class BlurView extends Component {
   setNativeProps = nativeProps => {
     if (this._root) {
       NativeModulesProxy.BlurViewManager.updateProps(nativeProps, findNodeHandle(this._root));
@@ -13,7 +13,7 @@ class BlurView extends Component {
   render() {
     return (
       <NativeBlurView
-        ref={e => (this._root = e)}
+        ref={e => this._root = e}
         {...this.props}
         style={[{ backgroundColor: 'transparent' }, this.props.style]}
       />
@@ -33,5 +33,3 @@ BlurView.defaultProps = {
 };
 
 const NativeBlurView = requireNativeViewManager('BlurView');
-
-module.exports = BlurView;

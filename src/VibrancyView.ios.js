@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { NativeModulesProxy, requireNativeViewManager } from 'expo-core';
 import { findNodeHandle } from 'react-native';
 
-class VibrancyView extends Component {
+export class VibrancyView extends Component {
   setNativeProps = nativeProps => {
     if (this._root) {
       NativeModulesProxy.VibrancyViewManager.updateProps(nativeProps, findNodeHandle(this._root));
@@ -35,5 +35,3 @@ VibrancyView.defaultProps = {
 };
 
 const NativeVibrancyView = requireNativeViewManager('VibrancyView');
-
-module.exports = VibrancyView;
